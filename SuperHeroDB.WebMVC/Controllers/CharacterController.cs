@@ -1,4 +1,4 @@
-﻿using SuperHeroDB.Models;
+﻿using SuperHeroDB.Models.CharacterModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +15,12 @@ namespace SuperHeroDB.WebMVC.Controllers
         {
             var model = new CharacterListItem[0];
             return View(model);
+        }
+
+        // GET
+        public ActionResult Create()
+        {
+            return View();
         }
     }
 }
