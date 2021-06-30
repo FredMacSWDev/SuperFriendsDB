@@ -32,17 +32,26 @@ namespace SuperFriendsDB.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(CharacterCreate model)
         {
-            if (!ModelState.IsValid)
-            {
-                return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
 
+            var service = CreateCharacterService();
+
+            if (service.CreateCharacter(model))
+            {
+                TempData["SaveResult"] = "Congratulations!  The character has been successfully created!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Character could not be created");
+
+            return View(model);
+        }
+
+        private CharacterService CreateCharacterService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new CharacterService(userId);
-
-            service.CreateCharacter(model);
-            
-            return RedirectToAction("Index");
+            return service;
         }
     }
 }
