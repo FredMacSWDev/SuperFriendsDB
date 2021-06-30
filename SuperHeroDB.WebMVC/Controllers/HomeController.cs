@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace SuperHeroDB.WebMVC.Controllers
+namespace SuperFriendsDB.WebMVC.Controllers
 {
     public class HomeController : Controller
     {

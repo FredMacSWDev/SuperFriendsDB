@@ -5,10 +5,10 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using SuperHeroDB.Data;
-using SuperHeroDB.WebMVC.Models;
+using SuperFriendsDB.Data;
+using SuperFriendsDB.WebMVC.Models;
 
-namespace SuperHeroDB.WebMVC
+namespace SuperFriendsDB.WebMVC
 {
     public partial class Startup
     {

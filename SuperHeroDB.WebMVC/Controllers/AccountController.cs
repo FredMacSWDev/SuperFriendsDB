@@ -8,10 +8,10 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using SuperHeroDB.Data;
-using SuperHeroDB.WebMVC.Models;
+using SuperFriendsDB.Data;
+using SuperFriendsDB.WebMVC.Models;
 
-namespace SuperHeroDB.WebMVC.Controllers
+namespace SuperFriendsDB.WebMVC.Controllers
 {
     [Authorize]
     public class AccountController : Controller

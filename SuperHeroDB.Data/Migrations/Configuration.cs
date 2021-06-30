@@ -1,19 +1,19 @@
-namespace SuperHeroDB.Data.Migrations
+namespace SuperFriendsDB.Data.Migrations
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<SuperHeroDB.Data.ApplicationDbContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<SuperFriendsDB.Data.ApplicationDbContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "SuperHeroDB.Data.ApplicationDbContext";
+            ContextKey = "SuperFriendsDB.Data.ApplicationDbContext";
         }
 
-        protected override void Seed(SuperHeroDB.Data.ApplicationDbContext context)
+        protected override void Seed(SuperFriendsDB.Data.ApplicationDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 

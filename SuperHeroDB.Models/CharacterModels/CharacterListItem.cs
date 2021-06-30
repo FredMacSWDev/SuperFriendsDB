@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperHeroDB.Models.CharacterModels
+namespace SuperFriendsDB.Models.CharacterModels
 {
     public class CharacterListItem
     {

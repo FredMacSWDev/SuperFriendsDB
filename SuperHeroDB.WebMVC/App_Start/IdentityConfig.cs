@@ -10,10 +10,10 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using SuperHeroDB.Data;
-using SuperHeroDB.WebMVC.Models;
+using SuperFriendsDB.Data;
+using SuperFriendsDB.WebMVC.Models;
 
-namespace SuperHeroDB.WebMVC
+namespace SuperFriendsDB.WebMVC
 {
     public class EmailService : IIdentityMessageService
     {

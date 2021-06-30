@@ -1,12 +1,12 @@
-﻿using SuperHeroDB.Data;
-using SuperHeroDB.Models.CharacterModels;
+﻿using SuperFriendsDB.Data;
+using SuperFriendsDB.Models.CharacterModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperHeroDB.Services
+namespace SuperFriendsDB.Services
 {
     public class CharacterService
     {
