@@ -48,5 +48,22 @@ namespace SuperFriendsDB.Services
                 return query.ToArray();
             }
         }
+
+        public CharacterDetail GetCharacterById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == id);
+                return
+                    new CharacterDetail
+                    {
+                        CharacterId = entity.CharacterId,
+                        HeroName = entity.HeroName
+                    };
+            }
+        }
     }
 }

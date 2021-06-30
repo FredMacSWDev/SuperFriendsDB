@@ -5,18 +5,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperFriendsDB.Data
+namespace SuperFriendsDB.Models.CharacterModels
 {
-    public class Character
+    public class CharacterDetail
     {
-        [Key]
+        [Display(Name = "Character ID")]
         public int CharacterId { get; set; }
 
-        [Required]
-        public Guid UserId { get; set; }
-
-        [Required]
-        [Display(Name = "Character")]
+        [Display(Name = "Character Name")]
         public string HeroName { get; set; }
     }
 }
