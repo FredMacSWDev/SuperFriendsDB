@@ -1,0 +1,34 @@
+﻿@model SuperFriendsDB.Models.CharacterModels.CharacterDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>CharacterDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HeroName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HeroName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.CharacterId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace SuperHeroDB.WebMVC.Models
+namespace SuperFriendsDB.WebMVC.Models
 {
     public class IndexViewModel
     {

@@ -1,8 +1,8 @@
 ﻿using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(SuperHeroDB.WebMVC.Startup))]
-namespace SuperHeroDB.WebMVC
+[assembly: OwinStartupAttribute(typeof(SuperFriendsDB.WebMVC.Startup))]
+namespace SuperFriendsDB.WebMVC
 {
     public partial class Startup
     {
