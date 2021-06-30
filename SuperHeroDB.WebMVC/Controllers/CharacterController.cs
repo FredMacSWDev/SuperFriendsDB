@@ -68,6 +68,31 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CharacterEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.CharacterId != id)
+            {
+                ModelState.AddModelError("", "ID Mismatch.  Please try again...");
+                return View(model);
+            }
+
+            var service = CreateCharacterService();
+
+            if (service.UpdateCharacter(model))
+            {
+                TempData["SaveResult"] = "Congratulations!  The character has been successfully updated!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Character could not be updated");
+
+            return View(model);
+        }
+
         private CharacterService CreateCharacterService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
