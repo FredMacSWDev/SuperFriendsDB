@@ -1,0 +1,54 @@
+﻿using SuperHeroDB.Data;
+using SuperHeroDB.Models.CharacterModels;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SuperHeroDB.Services
+{
+    public class CharacterService
+    {
+        private readonly Guid _userId;
+        public CharacterService(Guid userId)
+        {
+            _userId = userId;
+        }
+        
+        public bool CreateCharacter(CharacterCreate model)
+        {
+            var entity =
+                new Character()
+                {
+                    OwnerId = _userId,
+                    HeroName = model.HeroName
+                };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Characters.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public IEnumerable<CharacterListItem> GetCharacters()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Characters
+                        .Where(e => e.OwnerId == _userId)
+                        .Select(
+                            e =>
+                                new CharacterListItem
+                                {
+                                    CharacterId = e.CharacterId,
+                                    HeroName = e.HeroName
+                                });
+                return query.ToArray();
+            }
+        }
+    }
+}

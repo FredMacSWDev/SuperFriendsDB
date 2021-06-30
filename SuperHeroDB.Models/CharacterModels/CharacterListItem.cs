@@ -13,6 +13,6 @@ namespace SuperHeroDB.Models.CharacterModels
         public int CharacterId { get; set; }
 
         [Display(Name = "Character Name")]
-        public string Character { get; set; }
+        public string HeroName { get; set; }
     }
 }

@@ -13,6 +13,9 @@ namespace SuperHeroDB.Data
         public int CharacterId { get; set; }
 
         [Required]
+        public Guid OwnerId { get; set; }
+
+        [Required]
         [Display(Name = "Character")]        
         public string HeroName { get; set; }
     }
