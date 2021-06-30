@@ -65,5 +65,20 @@ namespace SuperFriendsDB.Services
                     };
             }
         }
+
+        public bool UpdateCharacter(CharacterEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == model.CharacterId);
+
+                entity.HeroName = model.HeroName;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

@@ -55,6 +55,19 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateCharacterService();
+            var detail = service.GetCharacterById(id);
+            var model =
+                new CharacterEdit
+                {
+                    CharacterId = detail.CharacterId,
+                    HeroName = detail.HeroName
+                };
+            return View(model);
+        }
+
         private CharacterService CreateCharacterService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
