@@ -49,6 +49,9 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -168,6 +171,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CharacterController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -234,6 +238,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Character\Create.cshtml" />
+    <Content Include="Views\Character\Index.cshtml" />
+    <Content Include="Views\Character\Details.cshtml" />
+    <Content Include="Views\Character\Edit.cshtml" />
+    <Content Include="Views\Character\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -252,17 +261,17 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SuperHeroDB.Data\SuperHeroDB.Data.csproj">
+    <ProjectReference Include="..\SuperHeroDB.Data\SuperFriendsDB.Data.csproj">
       <Project>{1965e545-ff4a-4121-961f-fc37d4f9277d}</Project>
-      <Name>SuperHeroDB.Data</Name>
+      <Name>SuperFriendsDB.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuperHeroDB.Models\SuperHeroDB.Models.csproj">
+    <ProjectReference Include="..\SuperHeroDB.Models\SuperFriendsDB.Models.csproj">
       <Project>{c34fafc2-f07f-47f0-9d7a-5a713e2c0d92}</Project>
-      <Name>SuperHeroDB.Models</Name>
+      <Name>SuperFriendsDB.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuperHeroDB.Services\SuperHeroDB.Services.csproj">
+    <ProjectReference Include="..\SuperHeroDB.Services\SuperFriendsDB.Services.csproj">
       <Project>{ebbd8223-3eca-49e2-960a-c12089fbc9c2}</Project>
-      <Name>SuperHeroDB.Services</Name>
+      <Name>SuperFriendsDB.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

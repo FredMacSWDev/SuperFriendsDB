@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace SuperHeroDB.WebMVC
+namespace SuperFriendsDB.WebMVC
 {
     public class RouteConfig
     {
