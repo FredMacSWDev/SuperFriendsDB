@@ -12,11 +12,11 @@ namespace SuperFriendsDB.Data
         [Key]
         public int CharacterId { get; set; }
 
-        [Required]
-        public Guid OwnerId { get; set; }
+        //[Required]
+        //public Guid UserId { get; set; }
 
         [Required]
-        [Display(Name = "Character")]        
+        [Display(Name = "Character")]
         public string HeroName { get; set; }
     }
 }

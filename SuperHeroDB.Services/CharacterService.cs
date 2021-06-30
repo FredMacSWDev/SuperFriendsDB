@@ -15,13 +15,12 @@ namespace SuperFriendsDB.Services
         {
             _userId = userId;
         }
-        
+
         public bool CreateCharacter(CharacterCreate model)
         {
             var entity =
                 new Character()
-                {
-                    OwnerId = _userId,
+                {                    
                     HeroName = model.HeroName
                 };
 
@@ -38,8 +37,7 @@ namespace SuperFriendsDB.Services
             {
                 var query =
                     ctx
-                        .Characters
-                        .Where(e => e.OwnerId == _userId)
+                        .Characters                        
                         .Select(
                             e =>
                                 new CharacterListItem

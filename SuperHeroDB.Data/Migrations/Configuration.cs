@@ -9,7 +9,7 @@ namespace SuperFriendsDB.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
             ContextKey = "SuperFriendsDB.Data.ApplicationDbContext";
         }
 
