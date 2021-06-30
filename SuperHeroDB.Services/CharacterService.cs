@@ -80,5 +80,20 @@ namespace SuperFriendsDB.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteChar(int charId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Characters
+                        .Single(e => e.CharacterId == charId);
+
+                ctx.Characters.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

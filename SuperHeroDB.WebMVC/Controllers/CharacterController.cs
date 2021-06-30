@@ -93,6 +93,26 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateCharacterService();
+            var model = svc.GetCharacterById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteCharacter(int id)
+        {
+            var svc = CreateCharacterService();
+            svc.DeleteChar(id);
+            TempData["SaveResult"] = "Character was successfully deleted";
+            return RedirectToAction("Index");
+        }
+
         private CharacterService CreateCharacterService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
