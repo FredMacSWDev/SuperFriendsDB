@@ -2,30 +2,18 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperFriendsDB.Data
+namespace SuperFriendsDB.Models.PowerstatModels
 {
-    public class Powerstat
+    public class PowerstatListItem
     {
-        // Powerstat myDeserializedClass = JsonConvert.DeserializeObject<Powerstat>(myJsonResponse); 
-        // Added JsonProperty attribute; undecided whether I'll manually add these attributes, pull them in from https://superheroapi.com/ or add my own json files as assets
-
-        [ForeignKey(nameof(Character))]
-        public int? CharacterId { get; set; }
-        public virtual Character Character { get; set; }        
-
-        //[JsonProperty("response")]
-        //public string Response { get; set; }
-
-        //[Required]
-        //[JsonProperty("id")]
-        //public string Id { get; set; }
-
         [Key]
+        public int CharacterId { get; set; }
+
+        [Required]
         [JsonProperty("name")]
         public string Name { get; set; }
 
@@ -52,7 +40,5 @@ namespace SuperFriendsDB.Data
         [Required]
         [JsonProperty("combat")]
         public string Combat { get; set; }
-
-
     }
 }
