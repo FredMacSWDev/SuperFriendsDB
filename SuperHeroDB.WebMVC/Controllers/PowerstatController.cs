@@ -47,6 +47,27 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var service = CreatePowerstatService();
+            var model = service.GetPowerstatById(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreatePowerstatService();
+            var detail = service.service.GetPowerstatById(id);
+            var model =
+                new PowerstatEdit
+                {
+                    CharacterId = detail.CharacterId,
+                    HeroName = detail.HeroName
+                };
+            return View(model);
+        }
+
         private PowerstatService CreatePowerstatService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

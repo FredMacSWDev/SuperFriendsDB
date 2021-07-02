@@ -64,5 +64,28 @@ namespace SuperHeroDB.Services
                 return query.ToArray();
             }
         }
+
+        public PowerstatDetail GetPowerstatById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Powerstats
+                        .Single(e => e.CharacterId == id);
+                return
+                    new PowerstatDetail
+                    {                        
+                        Name = entity.Name,
+                        Intelligence = entity.Intelligence,
+                        Strength = entity.Strength,
+                        Speed = entity.Speed,
+                        Durability = entity.Durability,
+                        Power = entity.Power,
+                        Combat = entity.Combat
+                    };
+
+            }
+        }
     }
 }
