@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using SuperFriendsDB.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,8 +16,9 @@ namespace SuperFriendsDB.Models.PowerstatModels
         public int CharacterId { get; set; }
 
         [Required]
+        [ForeignKey(nameof(Character.HeroName))]
         [JsonProperty("name")]
-        public string Name { get; set; }
+        public string Name { get; }
 
         [JsonProperty("intelligence")]
         public string Intelligence { get; set; }

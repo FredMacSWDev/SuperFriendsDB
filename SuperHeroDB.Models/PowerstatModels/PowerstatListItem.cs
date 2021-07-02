@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using SuperFriendsDB.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,11 +13,12 @@ namespace SuperFriendsDB.Models.PowerstatModels
     public class PowerstatListItem
     {
         [Key]
-        public int CharacterId { get; set; }
+        public int StatId { get; set; }
+        [ForeignKey("CharacterId")]
+        public virtual List<Character> Character { get; set; }
 
-        [Required]
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        [ForeignKey("HeroName")]
+        public string Name { get; }
 
         [Required]
         [JsonProperty("intelligence")]
