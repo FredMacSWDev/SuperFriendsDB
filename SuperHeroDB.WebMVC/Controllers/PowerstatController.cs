@@ -1,4 +1,6 @@
-﻿using SuperFriendsDB.Models.PowerstatModels;
+﻿using Microsoft.AspNet.Identity;
+using SuperFriendsDB.Models.PowerstatModels;
+using SuperHeroDB.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace SuperFriendsDB.WebMVC.Controllers
         // GET: Powerstat
         public ActionResult Index()
         {
-            var model = new PowerstatListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PowerstatService(userId);
+            var model = service.GetPowerstats();
+            
             return View(model);
         }
 
@@ -27,12 +32,26 @@ namespace SuperFriendsDB.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(PowerstatCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
-            }
+            var service = CreatePowerstatService();
+
+            if (service.CreatePowerstat(model))
+            {
+                TempData["SaveResult"] = "Your powerstats have been added successfully!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Powerstat could not be created");
 
             return View(model);
+        }
+
+        private PowerstatService CreatePowerstatService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new PowerstatService(userId);
+            return service;
         }
     }
 }

@@ -14,18 +14,19 @@ namespace SuperFriendsDB.Data
         // Powerstat myDeserializedClass = JsonConvert.DeserializeObject<Powerstat>(myJsonResponse); 
         // Added JsonProperty attribute; undecided whether I'll manually add these attributes, pull them in from https://superheroapi.com/ or add my own json files as assets
 
+        [Key]
         [ForeignKey(nameof(Character))]
-        public int? CharacterId { get; set; }
-        public virtual Character Character { get; set; }        
+        public int CharacterId { get; set; }
+        public virtual Character Character { get; set; }
 
         //[JsonProperty("response")]
         //public string Response { get; set; }
 
         //[Required]
         //[JsonProperty("id")]
-        //public string Id { get; set; }
+        //public int Id { get; set; }
 
-        [Key]
+        [Required]
         [JsonProperty("name")]
         public string Name { get; set; }
 

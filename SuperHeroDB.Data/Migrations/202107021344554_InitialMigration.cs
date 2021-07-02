@@ -3,7 +3,7 @@ namespace SuperFriendsDB.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class InitialMigration : DbMigration
     {
         public override void Up()
         {
@@ -15,6 +15,22 @@ namespace SuperFriendsDB.Data.Migrations
                         HeroName = c.String(nullable: false),
                     })
                 .PrimaryKey(t => t.CharacterId);
+            
+            CreateTable(
+                "dbo.Powerstat",
+                c => new
+                    {
+                        CharacterId = c.Int(nullable: false),
+                        Intelligence = c.String(),
+                        Strength = c.String(),
+                        Speed = c.String(),
+                        Durability = c.String(),
+                        Power = c.String(),
+                        Combat = c.String(),
+                    })
+                .PrimaryKey(t => t.CharacterId)
+                .ForeignKey("dbo.Character", t => t.CharacterId)
+                .Index(t => t.CharacterId);
             
             CreateTable(
                 "dbo.IdentityRole",
@@ -94,15 +110,18 @@ namespace SuperFriendsDB.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Powerstat", "CharacterId", "dbo.Character");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Powerstat", new[] { "CharacterId" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Powerstat");
             DropTable("dbo.Character");
         }
     }

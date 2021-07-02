@@ -13,7 +13,7 @@ namespace SuperFriendsDB.Data.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202106291801050_InitialMigration"; }
+            get { return "202107021344554_InitialMigration"; }
         }
         
         string IMigrationMetadata.Source

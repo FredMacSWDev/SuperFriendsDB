@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,6 +10,13 @@ namespace SuperFriendsDB.Models.PowerstatModels
 {
     public class PowerstatCreate
     {
+        [Required]
+        public int CharacterId { get; set; }
+
+        [Required]
+        [JsonProperty("name")]
+        public string Name { get; set; }
+
         [JsonProperty("intelligence")]
         public string Intelligence { get; set; }
 
