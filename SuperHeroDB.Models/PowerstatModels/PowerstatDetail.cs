@@ -12,10 +12,11 @@ namespace SuperFriendsDB.Models.PowerstatModels
     public class PowerstatDetail
     {
         [Key]
-        public int CharacterId { get; set; }
-        [ForeignKey("CharacterId")]
-        public virtual Character Characters { get; set; }
+        public int StatId { get; set; }
+        [ForeignKey("Character")]
+        public virtual Character Character { get; set; }
 
+        [Display(Name="Character Name")]
         public string Name { get; set; }
 
         public string Intelligence { get; set; }

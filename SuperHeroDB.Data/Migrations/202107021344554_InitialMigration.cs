@@ -20,7 +20,7 @@ namespace SuperFriendsDB.Data.Migrations
                 "dbo.Powerstat",
                 c => new
                     {
-                        CharacterId = c.Int(nullable: false),
+                        StatId = c.Int(nullable: false),
                         Intelligence = c.String(),
                         Strength = c.String(),
                         Speed = c.String(),
@@ -28,9 +28,9 @@ namespace SuperFriendsDB.Data.Migrations
                         Power = c.String(),
                         Combat = c.String(),
                     })
-                .PrimaryKey(t => t.CharacterId)
-                .ForeignKey("dbo.Character", t => t.CharacterId)
-                .Index(t => t.CharacterId);
+                .PrimaryKey(t => t.StatId)
+                .ForeignKey("dbo.Character", t => t.StatId)
+                .Index(t => t.StatId);
             
             CreateTable(
                 "dbo.IdentityRole",

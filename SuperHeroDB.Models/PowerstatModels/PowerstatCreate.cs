@@ -13,7 +13,8 @@ namespace SuperFriendsDB.Models.PowerstatModels
     public class PowerstatCreate
     {
         [Required]
-        public int CharacterId { get; set; }
+        [ForeignKey("CharacterId")]
+        public int StatId { get; set; }
 
         [Required]
         [ForeignKey(nameof(Character.HeroName))]

@@ -10,7 +10,7 @@ namespace SuperFriendsDB.Data
 {
     public class Character
     {
-        [Key]
+        //[Key]
         public int CharacterId { get; set; }
 
         //[Required]
@@ -19,5 +19,7 @@ namespace SuperFriendsDB.Data
         [Required]
         [Display(Name = "Character")]
         public string HeroName { get; set; }
+
+        public List<Powerstat> Powerstats { get; set; } = new List<Powerstat>();
     }
 }

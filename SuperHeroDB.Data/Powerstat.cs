@@ -15,8 +15,9 @@ namespace SuperFriendsDB.Data
         // Added JsonProperty attribute; undecided whether I'll manually add these attributes, pull them in from https://superheroapi.com/ or add my own json files as assets
 
         [Key]
-        public int CharacterId { get; set; }
-        [ForeignKey("CharacterId")]
+        public int StatId { get; set; }
+
+        //[ForeignKey("CharacterId")]
         public virtual Character Characters { get; set; }
 
         //[JsonProperty("response")]
@@ -26,9 +27,9 @@ namespace SuperFriendsDB.Data
         //[JsonProperty("id")]
         //public int Id { get; set; }
 
-        [Required]
-        [JsonProperty("name")]
-        public string Name { get; set; }
+        //[Required]
+        //[JsonProperty("name")]
+        //public string Name { get; set; }
 
         [Required]
         [JsonProperty("intelligence")]
