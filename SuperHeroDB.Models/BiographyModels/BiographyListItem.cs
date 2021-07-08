@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperHeroDB.Models.BiographyModels
+namespace SuperFriendsDB.Models.BiographyModels
 {
     public class BiographyListItem
     {
@@ -22,8 +22,8 @@ namespace SuperHeroDB.Models.BiographyModels
         [Required]
         public string AlterEgos { get; set; }
 
-        [Required]
-        public List<string> Aliases { get; set; }
+        //[Required]
+        //public List<string> Aliases { get; set; }
 
         [Required]
         public string PlaceOfBirth { get; set; }

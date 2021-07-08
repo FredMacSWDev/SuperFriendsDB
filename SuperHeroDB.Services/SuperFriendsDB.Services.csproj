@@ -66,6 +66,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BiographyService.cs" />
     <Compile Include="CharacterService.cs" />
     <Compile Include="PowerstatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BiographyModels\BiographyCreate.cs" />
     <Compile Include="BiographyModels\BiographyListItem.cs" />
     <Compile Include="CharacterModels\CharacterCreate.cs" />
     <Compile Include="CharacterModels\CharacterDetail.cs" />

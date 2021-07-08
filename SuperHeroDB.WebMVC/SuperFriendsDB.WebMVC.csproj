@@ -250,10 +250,11 @@
     <Content Include="Views\Powerstat\Details.cshtml" />
     <Content Include="Views\Powerstat\Edit.cshtml" />
     <Content Include="Views\Powerstat\Delete.cshtml" />
+    <Content Include="Views\Biography\Index.cshtml" />
+    <Content Include="Views\Biography\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Biography\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
