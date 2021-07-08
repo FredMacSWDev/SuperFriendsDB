@@ -75,7 +75,7 @@ namespace SuperHeroDB.Services
                         .Single(e => e.StatsId == id);
                 return
                     new PowerstatDetail
-                    {                        
+                    {
                         StatsId = entity.StatsId,
                         CharacterId = entity.CharacterId,
                         Intelligence = entity.Intelligence,
@@ -86,6 +86,26 @@ namespace SuperHeroDB.Services
                         Combat = entity.Combat
                     };
 
+            }
+        }
+
+        public bool UpdateStats(PowerstatEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Powerstats
+                        .Single(e => e.StatsId == model.StatsId);
+
+                entity.Intelligence = model.Intelligence;
+                entity.Strength = model.Strength;
+                entity.Speed = model.Speed;
+                entity.Durability = model.Durability;
+                entity.Power = model.Power;
+                entity.Combat = model.Combat;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

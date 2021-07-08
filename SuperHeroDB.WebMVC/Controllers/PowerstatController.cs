@@ -55,18 +55,22 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
-        //public ActionResult Edit(int id)
-        //{
-        //    var service = CreatePowerstatService();
-        //    var detail = service.service.GetPowerstatById(id);
-        //    var model =
-        //        new PowerstatEdit
-        //        {
-        //            CharacterId = detail.CharacterId,
-        //            HeroName = detail.HeroName
-        //        };
-        //    return View(model);
-        //}
+        public ActionResult Edit(int id)
+        {
+            var service = CreatePowerstatService();
+            var detail = service.GetPowerstatById(id);
+            var model =
+                new PowerstatEdit
+                {
+                    Intelligence = detail.Intelligence,
+                    Strength = detail.Strength,
+                    Speed = detail.Speed,
+                    Durability = detail.Durability,
+                    Power = detail.Power,
+                    Combat = detail.Combat
+                };
+            return View(model);
+        }
 
         private PowerstatService CreatePowerstatService()
         {
