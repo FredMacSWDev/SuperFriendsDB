@@ -10,7 +10,7 @@ namespace SuperFriendsDB.Data
 {
     public class Character
     {
-        //[Key]
+        [Key]
         public int CharacterId { get; set; }
 
         //[Required]

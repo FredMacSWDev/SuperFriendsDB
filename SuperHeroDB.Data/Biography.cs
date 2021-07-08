@@ -11,6 +11,8 @@ namespace SuperHeroDB.Data
 {
     public class Biography
     {
+        [Key]
+        [Display(Name = "Bio ID")]
         public int BioId { get; set; }
 
         [Display(Name = "Character ID")]
@@ -18,18 +20,25 @@ namespace SuperHeroDB.Data
         [ForeignKey("CharacterId")]
         public virtual Character Characters { get; set; }
 
+        [Required]
         public string FullName { get; set; }
 
+        [Required]
         public string AlterEgos { get; set; }
 
+        [Required]
         public List<string> Aliases { get; set; }
 
+        [Required]
         public string PlaceOfBirth { get; set; }
 
+        [Required]
         public string FirstAppearance { get; set; }
 
+        [Required]
         public string Publisher { get; set; }
 
+        [Required]
         public string Alignment { get; set; }
     }
 }

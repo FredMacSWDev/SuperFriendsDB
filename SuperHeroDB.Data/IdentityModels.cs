@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using SuperHeroDB.Data;
 
 namespace SuperFriendsDB.Data
 {
@@ -34,7 +35,7 @@ namespace SuperFriendsDB.Data
 
         public DbSet<Character> Characters { get; set; }
         public DbSet<Powerstat> Powerstats { get; set; }
-        //public DbSet<Biography> Bio { get; set; }
+        public DbSet<Biography> Bio { get; set; }
         //public DbSet<Appearance> AppearanceItems { get; set; }
         //public DbSet<Work> WorkDetails { get; set; }
         //public DbSet<Connections> Connections { get; set; }
