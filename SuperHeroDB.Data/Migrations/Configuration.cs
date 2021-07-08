@@ -1,4 +1,4 @@
-namespace SuperFriendsDB.Data.Migrations
+namespace SuperHeroDB.Data.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -10,7 +10,6 @@ namespace SuperFriendsDB.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "SuperFriendsDB.Data.ApplicationDbContext";
         }
 
         protected override void Seed(SuperFriendsDB.Data.ApplicationDbContext context)

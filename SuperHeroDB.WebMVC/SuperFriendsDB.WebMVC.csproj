@@ -246,6 +246,7 @@
     <Content Include="Views\Character\Delete.cshtml" />
     <Content Include="Views\Powerstat\Index.cshtml" />
     <Content Include="Views\Powerstat\Create.cshtml" />
+    <Content Include="Views\Powerstat\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

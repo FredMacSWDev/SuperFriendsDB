@@ -17,7 +17,9 @@ namespace SuperFriendsDB.Data
         [Key]
         public int StatId { get; set; }
 
-        //[ForeignKey("CharacterId")]
+        [Display(Name = "Character ID")]
+        public int CharacterId { get; set; }
+        [ForeignKey("CharacterId")]
         public virtual Character Characters { get; set; }
 
         //[JsonProperty("response")]
@@ -28,7 +30,7 @@ namespace SuperFriendsDB.Data
         //public int Id { get; set; }
 
         //[Required]
-        //[JsonProperty("name")]
+        //[Display(Name ="Character")]
         //public string Name { get; set; }
 
         [Required]

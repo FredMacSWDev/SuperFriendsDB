@@ -12,14 +12,14 @@ namespace SuperFriendsDB.Models.PowerstatModels
 {
     public class PowerstatCreate
     {
-        [Required]
-        [ForeignKey("CharacterId")]
         public int StatId { get; set; }
 
-        [Required]
-        [ForeignKey(nameof(Character.HeroName))]
-        [JsonProperty("name")]
-        public string Name { get; }
+        [Display(Name = "Character ID")]
+        public int CharacterId { get; set; }
+
+        //[Display(Name ="Character")]
+        //public string Name { get; set; }
+        //public virtual Character Character { get; set; }
 
         [JsonProperty("intelligence")]
         public string Intelligence { get; set; }

@@ -22,6 +22,7 @@ namespace SuperHeroDB.Services
                 new Powerstat()
                 {
                     StatId = model.StatId,
+                    CharacterId = model.CharacterId,
                     Intelligence = model.Intelligence,
                     Strength = model.Strength,
                     Speed = model.Speed,
@@ -48,17 +49,17 @@ namespace SuperHeroDB.Services
                         //.Where(e => e.Characters == e.Characters)
                         .Select(
                             e =>
-                                new PowerstatListItem()
+                                new PowerstatListItem
                                 {
                                     StatId = e.StatId,
+                                    CharacterId = e.CharacterId,
                                     Intelligence = e.Intelligence,
                                     Strength = e.Strength,
                                     Speed = e.Speed,
                                     Durability = e.Durability,
                                     Power = e.Power,
                                     Combat = e.Combat
-                                }
-                                );
+                                });
 
                 return query.ToArray();
             }
@@ -75,7 +76,8 @@ namespace SuperHeroDB.Services
                 return
                     new PowerstatDetail
                     {                        
-                        StatId = entity.StatId,                        
+                        StatId = entity.StatId,
+                        CharacterId = entity.CharacterId,
                         Intelligence = entity.Intelligence,
                         Strength = entity.Strength,
                         Speed = entity.Speed,
