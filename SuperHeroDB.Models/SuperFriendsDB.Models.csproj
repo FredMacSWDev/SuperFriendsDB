@@ -64,11 +64,21 @@
     <Compile Include="CharacterModels\CharacterDetail.cs" />
     <Compile Include="CharacterModels\CharacterEdit.cs" />
     <Compile Include="CharacterModels\CharacterListItem.cs" />
+    <Compile Include="PowerstatModels\PowerstatCreate.cs" />
+    <Compile Include="PowerstatModels\PowerstatDetail.cs" />
+    <Compile Include="PowerstatModels\PowerstatEdit.cs" />
+    <Compile Include="PowerstatModels\PowerstatListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SuperHeroDB.Data\SuperFriendsDB.Data.csproj">
+      <Project>{1965E545-FF4A-4121-961F-FC37D4F9277D}</Project>
+      <Name>SuperFriendsDB.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

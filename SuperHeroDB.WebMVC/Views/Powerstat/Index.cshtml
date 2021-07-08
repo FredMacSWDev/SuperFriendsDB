@@ -1,0 +1,86 @@
+﻿@model IEnumerable<SuperFriendsDB.Models.PowerstatModels.PowerstatListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Powerstats</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+        }
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StatsId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CharacterId)
+            </th>          
+            <th>
+                @Html.DisplayNameFor(model => model.Intelligence)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Strength)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Speed)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Durability)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Power)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Combat)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatsId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CharacterId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Intelligence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Strength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Durability)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Power)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Combat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StatsId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StatsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StatsId })
+        </td>
+    </tr>
+        }
+
+    </table>
