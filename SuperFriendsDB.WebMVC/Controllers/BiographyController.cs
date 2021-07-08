@@ -40,7 +40,7 @@ namespace SuperFriendsDB.WebMVC.Controllers
             {
                 TempData["SaveResult"] = "The biography has been added successfully!";
                 return RedirectToAction("Index");
-            }
+            };
 
             ModelState.AddModelError("", "Bio could not be created");
             return View(model);

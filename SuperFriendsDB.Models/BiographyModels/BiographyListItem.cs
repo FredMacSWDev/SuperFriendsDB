@@ -24,9 +24,6 @@ namespace SuperFriendsDB.Models.BiographyModels
         [Display(Name = "Alter Egos")]
         public string AlterEgos { get; set; }
 
-        //[Required]
-        //public List<string> Aliases { get; set; }
-
         [Required]
         [Display(Name = "Place of Birth")]
         public string PlaceOfBirth { get; set; }

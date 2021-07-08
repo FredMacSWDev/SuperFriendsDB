@@ -24,10 +24,7 @@ namespace SuperFriendsDB.Data
         public string FullName { get; set; }
 
         [Required]
-        public string AlterEgos { get; set; }
-
-        [Required]
-        public List<string> Aliases { get; set; }
+        public string AlterEgos { get; set; }        
 
         [Required]
         public string PlaceOfBirth { get; set; }
