@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using SuperFriendsDB.Models.PowerstatModels;
-using SuperHeroDB.Services;
+using SuperFriendsDB.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
