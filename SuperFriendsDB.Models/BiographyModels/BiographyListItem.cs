@@ -17,18 +17,22 @@ namespace SuperFriendsDB.Models.BiographyModels
         public int CharacterId { get; set; }
 
         [Required]
+        [Display(Name = "Full Name")]
         public string FullName { get; set; }
 
         [Required]
+        [Display(Name = "Alter Egos")]
         public string AlterEgos { get; set; }
 
         //[Required]
         //public List<string> Aliases { get; set; }
 
         [Required]
+        [Display(Name = "Place of Birth")]
         public string PlaceOfBirth { get; set; }
 
         [Required]
+        [Display(Name = "First Appearance")]
         public string FirstAppearance { get; set; }
 
         [Required]

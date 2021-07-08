@@ -1,4 +1,4 @@
-namespace SuperFriendsDB.Data.Migrations
+namespace SuperHeroDB.Data.Migrations
 {
     using System;
     using System.Data.Entity;

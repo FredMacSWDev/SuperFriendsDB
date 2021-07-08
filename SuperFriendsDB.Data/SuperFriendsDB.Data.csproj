@@ -62,9 +62,9 @@
   <ItemGroup>
     <Compile Include="Biography.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SuperFriends.cs" />
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Powerstat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

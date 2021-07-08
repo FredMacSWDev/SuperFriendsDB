@@ -25,7 +25,6 @@ namespace SuperFriendsDB.Services
                     CharacterId = model.CharacterId,
                     FullName = model.FullName,
                     AlterEgos = model.AlterEgos,
-                    Aliases = model.Aliases,
                     PlaceOfBirth = model.PlaceOfBirth,
                     FirstAppearance = model.FirstAppearance,
                     Publisher = model.Publisher,
@@ -37,7 +36,6 @@ namespace SuperFriendsDB.Services
                 ctx.Bio.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
-
         }
 
         public IEnumerable<BiographyListItem> GetBio()
