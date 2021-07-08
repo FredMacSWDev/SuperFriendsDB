@@ -18,32 +18,23 @@ namespace SuperFriendsDB.Models.PowerstatModels
 
         [Display(Name ="Character ID")]
         public int CharacterId { get; set; }
-
-        //[Display(Name ="Character")]
-        //public string Name { get; set; }
-
+       
         [Required]
-        [JsonProperty("intelligence")]
         public string Intelligence { get; set; }
 
         [Required]
-        [JsonProperty("strength")]
         public string Strength { get; set; }
 
         [Required]
-        [JsonProperty("speed")]
         public string Speed { get; set; }
 
         [Required]
-        [JsonProperty("durability")]
         public string Durability { get; set; }
 
         [Required]
-        [JsonProperty("power")]
         public string Power { get; set; }
 
         [Required]
-        [JsonProperty("combat")]
         public string Combat { get; set; }
     }
 }
