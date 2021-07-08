@@ -108,5 +108,20 @@ namespace SuperHeroDB.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteStats(int statId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Powerstats
+                        .Single(e => e.StatsId == statId);
+
+                ctx.Powerstats.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

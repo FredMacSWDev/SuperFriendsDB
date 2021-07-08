@@ -13,7 +13,7 @@ namespace SuperFriendsDB.Models.PowerstatModels
     {
         [Key]
         [Display(Name ="Stats ID")]
-        public int? StatsId { get; set; }
+        public int StatsId { get; set; }
 
         [Display(Name = "Character ID")]
         public int CharacterId { get; set; }

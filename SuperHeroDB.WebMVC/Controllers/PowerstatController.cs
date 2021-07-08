@@ -62,6 +62,7 @@ namespace SuperFriendsDB.WebMVC.Controllers
             var model =
                 new PowerstatEdit
                 {
+                    StatsId = detail.StatsId,
                     Intelligence = detail.Intelligence,
                     Strength = detail.Strength,
                     Speed = detail.Speed,
@@ -70,6 +71,51 @@ namespace SuperFriendsDB.WebMVC.Controllers
                     Combat = detail.Combat
                 };
             return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, PowerstatEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.StatsId != id)
+            {
+                ModelState.AddModelError("", "ID Mismatch.  Please try again...");
+                return View(model);
+            }
+
+            var service = CreatePowerstatService();
+
+            if (service.UpdateStats(model))
+            {
+                TempData["SaveResult"] = "Congratulations!  The powerstats have been successfully updated!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Powerstats could not be updated");
+
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreatePowerstatService();
+            var model = service.GetPowerstatById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteStats(int id)
+        {
+            var svc = CreatePowerstatService();
+            svc.DeleteStats(id);
+            TempData["SaveResult"] = "Powerstats were successfully deleted";
+            return RedirectToAction("Index");
         }
 
         private PowerstatService CreatePowerstatService()

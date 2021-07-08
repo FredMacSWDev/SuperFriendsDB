@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Character.cs" />
+    <Compile Include="CharacterAttributes.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Powerstat.cs" />
