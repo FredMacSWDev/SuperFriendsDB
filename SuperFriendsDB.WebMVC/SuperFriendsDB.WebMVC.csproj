@@ -270,15 +270,15 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SuperHeroDB.Data\SuperFriendsDB.Data.csproj">
+    <ProjectReference Include="..\SuperFriendsDB.Data\SuperFriendsDB.Data.csproj">
       <Project>{1965e545-ff4a-4121-961f-fc37d4f9277d}</Project>
       <Name>SuperFriendsDB.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuperHeroDB.Models\SuperFriendsDB.Models.csproj">
+    <ProjectReference Include="..\SuperFriendsDB.Models\SuperFriendsDB.Models.csproj">
       <Project>{c34fafc2-f07f-47f0-9d7a-5a713e2c0d92}</Project>
       <Name>SuperFriendsDB.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SuperHeroDB.Services\SuperFriendsDB.Services.csproj">
+    <ProjectReference Include="..\SuperFriendsDB.Services\SuperFriendsDB.Services.csproj">
       <Project>{ebbd8223-3eca-49e2-960a-c12089fbc9c2}</Project>
       <Name>SuperFriendsDB.Services</Name>
     </ProjectReference>
