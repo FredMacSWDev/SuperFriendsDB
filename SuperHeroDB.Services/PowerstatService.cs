@@ -21,7 +21,7 @@ namespace SuperHeroDB.Services
             var entity =
                 new Powerstat()
                 {
-                    StatId = model.StatId,
+                    StatsId = model.StatsId,
                     CharacterId = model.CharacterId,
                     Intelligence = model.Intelligence,
                     Strength = model.Strength,
@@ -51,7 +51,7 @@ namespace SuperHeroDB.Services
                             e =>
                                 new PowerstatListItem
                                 {
-                                    StatId = e.StatId,
+                                    StatsId = e.StatsId,
                                     CharacterId = e.CharacterId,
                                     Intelligence = e.Intelligence,
                                     Strength = e.Strength,
@@ -72,11 +72,11 @@ namespace SuperHeroDB.Services
                 var entity =
                     ctx
                         .Powerstats
-                        .Single(e => e.StatId == id);
+                        .Single(e => e.StatsId == id);
                 return
                     new PowerstatDetail
                     {                        
-                        StatId = entity.StatId,
+                        StatsId = entity.StatsId,
                         CharacterId = entity.CharacterId,
                         Intelligence = entity.Intelligence,
                         Strength = entity.Strength,

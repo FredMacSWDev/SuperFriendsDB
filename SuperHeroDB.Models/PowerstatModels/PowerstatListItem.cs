@@ -13,7 +13,8 @@ namespace SuperFriendsDB.Models.PowerstatModels
     public class PowerstatListItem
     {
         [Key]
-        public int StatId { get; set; }
+        [Display(Name ="Stats ID")]
+        public int StatsId { get; set; }
 
         [Display(Name ="Character ID")]
         public int CharacterId { get; set; }

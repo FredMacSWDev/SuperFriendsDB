@@ -22,7 +22,7 @@
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.StatId)
+                @Html.DisplayNameFor(model => model.StatsId)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.CharacterId)
@@ -50,34 +50,37 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-                @*<td>
-                    @Html.DisplayFor(modelItem => item.Name)
-                </td>*@
-                <td>
-                    @Html.DisplayFor(modelItem => item.Intelligence)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Strength)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Speed)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Durability)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Power)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Combat)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.StatId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.StatId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.StatId })
-                </td>
-            </tr>
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.StatsId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CharacterId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Intelligence)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Strength)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Speed)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Durability)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Power)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Combat)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = item.StatsId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StatsId }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StatsId })
+        </td>
+    </tr>
         }
 
     </table>
