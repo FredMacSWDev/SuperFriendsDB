@@ -62,5 +62,29 @@ namespace SuperFriendsDB.Services
                 return query.ToArray();
             }
         }
+
+        public AppearanceDetail GetLooksById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .AppearanceItems
+                        .Single(e => e.AppearanceId == id);
+                return
+                    new AppearanceDetail
+                    {
+                        AppearanceId = entity.AppearanceId,
+                        CharacterId = entity.CharacterId,
+                        Gender = entity.Gender,
+                        Race = entity.Race,
+                        Height = entity.Height,
+                        Weight = entity.Weight,
+                        EyeColor = entity.EyeColor,
+                        HairColor = entity.HairColor
+                    };
+
+            }
+        }
     }
 }
