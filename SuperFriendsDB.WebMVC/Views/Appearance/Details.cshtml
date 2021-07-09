@@ -1,0 +1,82 @@
+﻿@model SuperFriendsDB.Models.AppearanceModels.AppearanceDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Appearance Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.AppearanceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppearanceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Race)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Race)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Height)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Height)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EyeColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EyeColor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.HairColor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.HairColor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.AppearanceId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
