@@ -75,5 +75,30 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, WorkEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.WorkId != id)
+            {
+                ModelState.AddModelError("", "ID Mismatch.  Please try again...");
+                return View(model);
+            }
+
+            var service = CreateWorkService();
+
+            if (service.UpdateWork(model))
+            {
+                TempData["SaveResult"] = "Congratulations!  The work attributes have been successfully updated!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Sorry...the work attributes could not be updated");
+
+            return View(model);
+        }
+
     }
 }
