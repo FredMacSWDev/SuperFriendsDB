@@ -252,6 +252,7 @@
     <Content Include="Views\Powerstat\Delete.cshtml" />
     <Content Include="Views\Biography\Index.cshtml" />
     <Content Include="Views\Biography\Create.cshtml" />
+    <Content Include="Views\Biography\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
