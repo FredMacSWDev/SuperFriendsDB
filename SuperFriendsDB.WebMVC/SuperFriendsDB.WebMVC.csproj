@@ -253,6 +253,7 @@
     <Content Include="Views\Biography\Index.cshtml" />
     <Content Include="Views\Biography\Create.cshtml" />
     <Content Include="Views\Biography\Details.cshtml" />
+    <Content Include="Views\Biography\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

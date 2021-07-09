@@ -72,6 +72,31 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, BiographyEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.BioId != id)
+            {
+                ModelState.AddModelError("", "ID Mismatch.  Please try again...");
+                return View(model);
+            }
+
+            var service = CreateBioService();
+
+            if (service.UpdateBio(model))
+            {
+                TempData["SaveResult"] = "Congratulations!  The biography information has been successfully updated!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "The biography information could not be updated");
+
+            return View(model);
+        }
+
         private BiographyService CreateBioService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
