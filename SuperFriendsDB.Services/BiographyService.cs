@@ -1,5 +1,6 @@
 ﻿using SuperFriendsDB.Data;
 using SuperFriendsDB.Models.BiographyModels;
+using SuperHeroDB.Models.BiographyModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -60,6 +61,30 @@ namespace SuperFriendsDB.Services
                                 });
 
                 return query.ToArray();
+            }
+        }
+
+        public BiographyDetail GetBioById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Bio
+                        .Single(e => e.BioId == id);
+                return
+                    new BiographyDetail
+                    {
+                        BioId = entity.BioId,
+                        CharacterId = entity.CharacterId,
+                        FullName = entity.FullName,
+                        AlterEgos = entity.AlterEgos,
+                        PlaceOfBirth = entity.PlaceOfBirth,
+                        FirstAppearance = entity.FirstAppearance,
+                        Publisher = entity.Publisher,
+                        Alignment = entity.Alignment
+                    };
+
             }
         }
     }
