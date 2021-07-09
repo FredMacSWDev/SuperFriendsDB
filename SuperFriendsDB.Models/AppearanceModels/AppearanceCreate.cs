@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperFriendsDB.Models.AppearanceModels
 {
-    public class AppearanceListItem
+    public class AppearanceCreate
     {
         [Display(Name = "Appearance ID")]
         public int AppearanceId { get; set; }
@@ -23,7 +23,7 @@ namespace SuperFriendsDB.Models.AppearanceModels
 
         public List<string> Weight { get; set; }
 
-        [Display(Name ="Eye Color")]
+        [Display(Name = "Eye Color")]
         public string EyeColor { get; set; }
 
         [Display(Name = "Hair Color")]

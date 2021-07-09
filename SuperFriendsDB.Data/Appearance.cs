@@ -11,7 +11,7 @@ namespace SuperFriendsDB.Data
     public class Appearance
     {
         [Key]
-        [Display(Name = "Bio ID")]
+        [Display(Name = "Appearance ID")]
         public int AppearanceId { get; set; }
 
         [Display(Name = "Character ID")]
