@@ -9,6 +9,18 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
+}
+
 <table class="table">
     <tr>
         <th>
@@ -38,39 +50,39 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) 
-{
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.BioId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CharacterId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FullName)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.AlterEgos)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.PlaceOfBirth)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.FirstAppearance)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Publisher)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Alignment)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.BioId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.BioId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.BioId })
-    </td>
-</tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BioId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CharacterId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlterEgos)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PlaceOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstAppearance)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Publisher)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Alignment)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.BioId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.BioId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.BioId })
+            </td>
+        </tr>
+    }
 
 </table>
