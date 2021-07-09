@@ -1,4 +1,6 @@
-﻿using SuperFriendsDB.Models.WorkModels;
+﻿using Microsoft.AspNet.Identity;
+using SuperFriendsDB.Models.WorkModels;
+using SuperFriendsDB.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +15,11 @@ namespace SuperFriendsDB.WebMVC.Controllers
         // GET: Work
         public ActionResult Index()
         {
-            var model = new WorkListItem[0];
-            return View();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new WorkService(userId);
+            var model = service.GetWork();
+
+            return View(model);
         }
 
         public ActionResult Create()
@@ -26,12 +31,26 @@ namespace SuperFriendsDB.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(WorkCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
 
+            var service = CreateWorkService();
+
+            if (service.CreateWork(model))
+            {
+                TempData["SaveResult"] = "Your work attributes have been added successfully!";
+                return RedirectToAction("Index");
             }
 
+            ModelState.AddModelError("", "Your work attributes could not be created");
+
             return View(model);
+        }
+
+        private WorkService CreateWorkService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new WorkService(userId);
+            return service;
         }
     }
 }
