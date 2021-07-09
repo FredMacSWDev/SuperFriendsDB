@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="AppearanceModels\AppearanceCreate.cs" />
     <Compile Include="AppearanceModels\AppearanceDetail.cs" />
+    <Compile Include="AppearanceModels\AppearanceEdit.cs" />
     <Compile Include="AppearanceModels\AppearanceListItem.cs" />
     <Compile Include="BiographyModels\BiographyCreate.cs" />
     <Compile Include="BiographyModels\BiographyDetail.cs" />

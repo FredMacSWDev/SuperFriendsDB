@@ -258,6 +258,7 @@
     <Content Include="Views\Biography\Delete.cshtml" />
     <Content Include="Views\Appearance\Index.cshtml" />
     <Content Include="Views\Appearance\Create.cshtml" />
+    <Content Include="Views\Appearance\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

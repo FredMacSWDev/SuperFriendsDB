@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNet.Identity;
 using SuperFriendsDB.Models.AppearanceModels;
 using SuperFriendsDB.Services;
+using SuperHeroDB.Models.AppearanceModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,26 +51,51 @@ namespace SuperFriendsDB.WebMVC.Controllers
         public ActionResult Details(int id)
         {
             var service = CreateAppearanceService();
-            var model = service.GetAppearanceById(id);
+            var model = service.GetLooksById(id);
 
             return View(model);
         }
 
         public ActionResult Edit(int id)
         {
-            var service = CreatePowerstatService();
-            var detail = service.GetPowerstatById(id);
+            var service = CreateAppearanceService();
+            var detail = service.GetLooksById(id);
             var model =
-                new PowerstatEdit
+                new AppearanceEdit
                 {
-                    StatsId = detail.StatsId,
-                    Intelligence = detail.Intelligence,
-                    Strength = detail.Strength,
-                    Speed = detail.Speed,
-                    Durability = detail.Durability,
-                    Power = detail.Power,
-                    Combat = detail.Combat
+                    AppearanceId = detail.AppearanceId,
+                    Gender = detail.Gender,
+                    Race = detail.Race,
+                    Height = detail.Height,
+                    Weight = detail.Weight,
+                    EyeColor = detail.EyeColor,
+                    HairColor = detail.HairColor
                 };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, AppearanceEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.AppearanceId != id)
+            {
+                ModelState.AddModelError("", "ID Mismatch.  Please try again...");
+                return View(model);
+            }
+
+            var service = CreateAppearanceService();
+
+            if (service.UpdateLooks(model))
+            {
+                TempData["SaveResult"] = "Congratulations!  The appearance attributes have been successfully updated!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "The appearance attributes could not be updated");
+
             return View(model);
         }
 

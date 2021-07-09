@@ -19,9 +19,9 @@ namespace SuperFriendsDB.Models.AppearanceModels
 
         public string Race { get; set; }
 
-        public List<string> Height { get; set; }
+        public string Height { get; set; }
 
-        public List<string> Weight { get; set; }
+        public string Weight { get; set; }
 
         [Display(Name = "Eye Color")]
         public string EyeColor { get; set; }

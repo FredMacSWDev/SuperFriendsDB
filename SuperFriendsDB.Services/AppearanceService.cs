@@ -1,5 +1,6 @@
 ﻿using SuperFriendsDB.Data;
 using SuperFriendsDB.Models.AppearanceModels;
+using SuperHeroDB.Models.AppearanceModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,6 +86,27 @@ namespace SuperFriendsDB.Services
                     };
 
             }
+        }
+
+        public bool UpdateLooks(AppearanceEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .AppearanceItems
+                        .Single(e => e.AppearanceId == model.AppearanceId);
+
+                entity.Gender = model.Gender;
+                entity.Race = model.Race;
+                entity.Height = model.Height;
+                entity.Weight = model.Weight;
+                entity.EyeColor = model.EyeColor;
+                entity.HairColor = model.HairColor;
+
+                return ctx.SaveChanges() == 1;
+            }
+
         }
     }
 }
