@@ -94,6 +94,21 @@ namespace SuperFriendsDB.Services
 
         }
 
+        public bool DeleteWork(int workId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .WorkDetails
+                        .Single(e => e.WorkId == workId);
+
+                ctx.WorkDetails.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
 
     }
 }

@@ -100,5 +100,25 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateWorkService();
+            var model = service.GetWorkById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteWork(int id)
+        {
+            var svc = CreateWorkService();
+            svc.DeleteWork(id);
+            TempData["SaveResult"] = "Powerstats were successfully deleted";
+            return RedirectToAction("Index");
+        }
+
     }
 }
