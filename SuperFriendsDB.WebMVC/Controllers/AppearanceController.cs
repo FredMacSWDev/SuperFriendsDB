@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using SuperFriendsDB.Models.AppearanceModels;
+using SuperFriendsDB.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,7 +17,7 @@ namespace SuperFriendsDB.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new AppearanceService(userId);
-            var model = service.GetAppearance();
+            var model = service.GetLooks();
 
             return View(model);
         }
@@ -32,18 +33,25 @@ namespace SuperFriendsDB.WebMVC.Controllers
         public ActionResult Create(AppearanceCreate model)
         {
             if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateAppearanceService();
+            
+            if (service.CreateLook(model))
+            {
+                TempData["SaveResult"] = "Your appearance attributes have been added successfully!";
+                return RedirectToAction("Index");
+            };
 
-            //var service = CreateAppearanceService();
-
-            //if (service.CreateAppearance(model))
-            //{
-            //    TempData["SaveResult"] = "Your powerstats have been added successfully!";
-            //    return RedirectToAction("Index");
-            //};
-
-            //ModelState.AddModelError("", "Powerstat could not be created");
+            ModelState.AddModelError("", "The appearance attributes could not be created");
 
             return View(model);
+        }
+
+        private AppearanceService CreateAppearanceService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new AppearanceService(userId);
+            return service;
         }
     }
 }
