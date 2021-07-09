@@ -58,5 +58,25 @@ namespace SuperFriendsDB.Services
 
         }
 
+        public WorkDetail GetWorkById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .WorkDetails
+                        .Single(e => e.WorkId == id);
+                return
+                    new WorkDetail
+                    {
+                        WorkId = entity.WorkId,
+                        CharacterId = entity.CharacterId,
+                        Occupation = entity.Occupation,
+                        Base = entity.Base
+                    };
+            }
+
+        }
+
     }
 }

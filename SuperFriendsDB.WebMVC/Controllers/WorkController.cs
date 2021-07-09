@@ -52,5 +52,13 @@ namespace SuperFriendsDB.WebMVC.Controllers
             var service = new WorkService(userId);
             return service;
         }
+
+        public ActionResult Details(int id)
+        {
+            var service = CreateWorkService();
+            var model = service.GetWorkById(id);
+
+            return View(model);
+        }
     }
 }
