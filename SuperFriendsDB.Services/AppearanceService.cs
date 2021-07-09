@@ -1,6 +1,5 @@
 ﻿using SuperFriendsDB.Data;
 using SuperFriendsDB.Models.AppearanceModels;
-using SuperHeroDB.Models.AppearanceModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

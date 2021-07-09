@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNet.Identity;
 using SuperFriendsDB.Models.AppearanceModels;
 using SuperFriendsDB.Services;
-using SuperHeroDB.Models.AppearanceModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;

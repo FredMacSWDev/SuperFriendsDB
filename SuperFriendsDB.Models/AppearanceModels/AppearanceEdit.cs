@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SuperHeroDB.Models.AppearanceModels
+namespace SuperFriendsDB.Models.AppearanceModels
 {
     public class AppearanceEdit
     {
