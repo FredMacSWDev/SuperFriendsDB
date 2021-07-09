@@ -36,7 +36,7 @@ namespace SuperFriendsDB.Data
         public DbSet<Character> Characters { get; set; }
         public DbSet<Powerstat> Powerstats { get; set; }
         public DbSet<Biography> Bio { get; set; }
-        //public DbSet<Appearance> AppearanceItems { get; set; }
+        public DbSet<Appearance> AppearanceItems { get; set; }
         //public DbSet<Work> WorkDetails { get; set; }
         //public DbSet<Connections> Connections { get; set; }
 

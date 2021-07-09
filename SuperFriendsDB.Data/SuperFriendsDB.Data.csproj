@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Appearance.cs" />
     <Compile Include="Biography.cs" />
     <Compile Include="Character.cs" />
     <Compile Include="Migrations\Configuration.cs" />
