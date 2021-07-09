@@ -97,6 +97,26 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateBioService();
+            var model = service.GetBioById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteBio(int id)
+        {
+            var svc = CreateBioService();
+            svc.DeleteBio(id);
+            TempData["SaveResult"] = "The biography was successfully deleted";
+            return RedirectToAction("Index");
+        }
+
         private BiographyService CreateBioService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

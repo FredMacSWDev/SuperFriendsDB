@@ -107,5 +107,20 @@ namespace SuperFriendsDB.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteBio(int bioId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Bio
+                        .Single(e => e.BioId == bioId);
+
+                ctx.Bio.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
