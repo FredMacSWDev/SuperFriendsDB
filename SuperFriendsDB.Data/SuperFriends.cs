@@ -20,5 +20,11 @@ namespace SuperFriendsDB.Data
         public int BioId { get; set; }
         public virtual Biography Biography { get; set; }
 
+        public int AppearanceId { get; set; }
+        public virtual Appearance Appearance { get; set; }
+
+        public int WorkId { get; set; }
+        public virtual Work Work { get; set; }
+
     }
 }

@@ -177,6 +177,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PowerstatController.cs" />
+    <Compile Include="Controllers\WorkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -261,6 +262,7 @@
     <Content Include="Views\Appearance\Details.cshtml" />
     <Content Include="Views\Appearance\Edit.cshtml" />
     <Content Include="Views\Appearance\Delete.cshtml" />
+    <Content Include="Views\Work\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
