@@ -75,8 +75,25 @@ namespace SuperFriendsDB.Services
                         Base = entity.Base
                     };
             }
+        }
+
+        public bool UpdateWork(WorkEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .WorkDetails
+                        .Single(e => e.WorkId == model.WorkId);
+
+                entity.Occupation = model.Occupation;
+                entity.Base = model.Base;
+
+                return ctx.SaveChanges() == 1;
+            }
 
         }
+
 
     }
 }
