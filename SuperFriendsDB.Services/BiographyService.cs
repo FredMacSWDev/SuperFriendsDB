@@ -1,6 +1,6 @@
 ﻿using SuperFriendsDB.Data;
 using SuperFriendsDB.Models.BiographyModels;
-using SuperHeroDB.Models.BiographyModels;
+using SuperFriendsDB.Models.BiographyModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -85,6 +85,26 @@ namespace SuperFriendsDB.Services
                         Alignment = entity.Alignment
                     };
 
+            }
+        }
+
+        public bool UpdateBio(BiographyEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Bio
+                        .Single(e => e.BioId == model.BioId);
+
+                entity.FullName = model.FullName;
+                entity.AlterEgos = model.AlterEgos;
+                entity.PlaceOfBirth = model.PlaceOfBirth;
+                entity.FirstAppearance = model.FirstAppearance;
+                entity.Publisher = model.Publisher;
+                entity.Alignment = model.Alignment;
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

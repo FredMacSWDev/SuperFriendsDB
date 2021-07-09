@@ -54,6 +54,24 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateBioService();
+            var detail = service.GetBioById(id);
+            var model =
+                new BiographyEdit
+                {
+                    BioId = detail.BioId,
+                    FullName = detail.FullName,
+                    AlterEgos = detail.AlterEgos,
+                    PlaceOfBirth = detail.PlaceOfBirth,
+                    FirstAppearance = detail.FirstAppearance,
+                    Publisher = detail.Publisher,
+                    Alignment = detail.Alignment
+                };
+            return View(model);
+        }
+
         private BiographyService CreateBioService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperFriendsDB.Models.BiographyModels
 {
-    public class BiographyDetail
+    public class BiographyEdit
     {
         [Key]
         [Display(Name = "Bio ID")]
