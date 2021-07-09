@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Appearance</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -36,6 +36,12 @@
             @Html.DisplayNameFor(model => model.Race)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.Height)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Weight)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.EyeColor)
         </th>
         <th>
@@ -60,15 +66,21 @@
                 @Html.DisplayFor(modelItem => item.Race)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.Height)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.EyeColor)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.HairColor)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.AppearanceId }) |
-                @Html.ActionLink("Details", "Details", new { id=item.AppearanceId }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.AppearanceId })
+                @Html.ActionLink("Edit", "Edit", new { id = item.AppearanceId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.AppearanceId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.AppearanceId })
             </td>
         </tr>
     }

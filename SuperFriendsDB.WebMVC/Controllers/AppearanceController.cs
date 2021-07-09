@@ -98,6 +98,26 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateAppearanceService();
+            var model = service.GetLooksById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteLooks(int id)
+        {
+            var svc = CreateAppearanceService();
+            svc.DeleteLooks(id);
+            TempData["SaveResult"] = "Powerstats were successfully deleted";
+            return RedirectToAction("Index");
+        }
+
         private AppearanceService CreateAppearanceService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

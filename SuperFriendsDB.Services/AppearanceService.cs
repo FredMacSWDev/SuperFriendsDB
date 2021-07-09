@@ -107,5 +107,20 @@ namespace SuperFriendsDB.Services
             }
 
         }
+
+        public bool DeleteLooks(int appearanceId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .AppearanceItems
+                        .Single(e => e.AppearanceId == appearanceId);
+
+                ctx.AppearanceItems.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

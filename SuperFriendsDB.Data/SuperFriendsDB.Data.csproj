@@ -63,6 +63,10 @@
     <Compile Include="Appearance.cs" />
     <Compile Include="Biography.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Migrations\202107091430321_First.cs" />
+    <Compile Include="Migrations\202107091430321_First.Designer.cs">
+      <DependentUpon>202107091430321_First.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SuperFriends.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -72,6 +76,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202107091430321_First.resx">
+      <DependentUpon>202107091430321_First.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
