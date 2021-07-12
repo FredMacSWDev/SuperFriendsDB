@@ -46,13 +46,6 @@ namespace SuperFriendsDB.WebMVC.Controllers
             return View(model);
         }
 
-        private ConnectionService CreateConnectionService()
-        {
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new ConnectionService(userId);
-            return service;
-        }
-
         public ActionResult Details(int id)
         {
             var service = CreateConnectionService();
@@ -99,6 +92,32 @@ namespace SuperFriendsDB.WebMVC.Controllers
             ModelState.AddModelError("", "Sorry...the connections could not be updated");
 
             return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var service = CreateConnectionService();
+            var model = service.GetConnectionsById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteStats(int id)
+        {
+            var svc = CreateConnectionService();
+            svc.DeleteConnections(id);
+            TempData["SaveResult"] = "Powerstats were successfully deleted";
+            return RedirectToAction("Index");
+        }
+        private ConnectionService CreateConnectionService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ConnectionService(userId);
+            return service;
         }
     }
 }

@@ -90,5 +90,20 @@ namespace SuperFriendsDB.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public bool DeleteConnections(int linkId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Connections
+                        .Single(e => e.ConnectionsId == linkId);
+
+                ctx.Connections.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
