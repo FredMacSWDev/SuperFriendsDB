@@ -69,6 +69,7 @@
     <Compile Include="AppearanceService.cs" />
     <Compile Include="BiographyService.cs" />
     <Compile Include="CharacterService.cs" />
+    <Compile Include="ConnectionService.cs" />
     <Compile Include="PowerstatService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WorkService.cs" />

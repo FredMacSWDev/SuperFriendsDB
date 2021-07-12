@@ -63,9 +63,14 @@
     <Compile Include="Appearance.cs" />
     <Compile Include="Biography.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Connections.cs" />
     <Compile Include="Migrations\202107091430321_First.cs" />
     <Compile Include="Migrations\202107091430321_First.Designer.cs">
       <DependentUpon>202107091430321_First.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107120604215_Second.cs" />
+    <Compile Include="Migrations\202107120604215_Second.Designer.cs">
+      <DependentUpon>202107120604215_Second.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="SuperFriends.cs" />
@@ -81,6 +86,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107091430321_First.resx">
       <DependentUpon>202107091430321_First.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107120604215_Second.resx">
+      <DependentUpon>202107120604215_Second.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
