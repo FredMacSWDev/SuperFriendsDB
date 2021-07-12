@@ -52,5 +52,13 @@ namespace SuperFriendsDB.WebMVC.Controllers
             var service = new ConnectionService(userId);
             return service;
         }
+
+        public ActionResult Details(int id)
+        {
+            var service = CreateConnectionService();
+            var model = service.GetConnectionsById(id);
+
+            return View(model);
+        }
     }
 }

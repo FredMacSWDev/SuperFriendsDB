@@ -55,5 +55,24 @@ namespace SuperFriendsDB.Services
                 return query.ToArray();
             }
         }
+
+        public ConnectionDetail GetConnectionsById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                   ctx
+                       .Connections
+                       .Single(e => e.ConnectionsId == id);
+                return
+                    new ConnectionDetail
+                    {
+                        ConnectionsId = entity.ConnectionsId,
+                        CharacterId = entity.CharacterId,
+                        GroupAffiliation = entity.GroupAffiliation,
+                        Relatives = entity.Relatives
+                    };
+            }
+        }
     }
 }
