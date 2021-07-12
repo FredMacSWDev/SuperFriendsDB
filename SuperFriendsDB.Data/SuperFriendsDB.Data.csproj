@@ -63,6 +63,7 @@
     <Compile Include="Appearance.cs" />
     <Compile Include="Biography.cs" />
     <Compile Include="Character.cs" />
+    <Compile Include="Connections.cs" />
     <Compile Include="Migrations\202107091430321_First.cs" />
     <Compile Include="Migrations\202107091430321_First.Designer.cs">
       <DependentUpon>202107091430321_First.cs</DependentUpon>
