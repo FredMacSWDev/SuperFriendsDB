@@ -75,5 +75,30 @@ namespace SuperFriendsDB.WebMVC.Controllers
                 };
             return View(model);
         }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, ConnectionEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.ConnectionsId != id)
+            {
+                ModelState.AddModelError("", "ID Mismatch.  Please try again...");
+                return View(model);
+            }
+
+            var service = CreateConnectionService();
+
+            if (service.UpdateConnections(model))
+            {
+                TempData["SaveResult"] = "Congratulations!  The connections have been successfully updated!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "Sorry...the connections could not be updated");
+
+            return View(model);
+        }
     }
 }
