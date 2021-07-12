@@ -1,4 +1,6 @@
-﻿using SuperFriendsDB.Models.ConnectionModels;
+﻿using Microsoft.AspNet.Identity;
+using SuperFriendsDB.Models.ConnectionModels;
+using SuperFriendsDB.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace SuperFriendsDB.WebMVC.Controllers
         // GET: Connection
         public ActionResult Index()
         {
-            var model = new ConnectionListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ConnectionService(userId);
+            var model = service.GetConnections();
+
             return View(model);
         }
 
@@ -26,7 +31,26 @@ namespace SuperFriendsDB.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(ConnectionCreate model)
         {
+            if (!ModelState.IsValid) return View(model);
 
+            var service = CreateConnectionService();
+
+            if (service.CreateConnection(model))
+            {
+                TempData["SaveResult"] = "Your connections have been added successfully!";
+                return RedirectToAction("Index");
+            };
+
+            ModelState.AddModelError("", "The connections could not be created");
+
+            return View(model);
+        }
+
+        private ConnectionService CreateConnectionService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new ConnectionService(userId);
+            return service;
         }
     }
 }
