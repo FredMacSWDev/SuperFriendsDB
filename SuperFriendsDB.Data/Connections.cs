@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace SuperFriendsDB.Data
 {
-    public class Work
+    public class Connections
     {
         [Key]
-        [Display(Name = "Work ID")]
-        public int WorkId { get; set; }
+        [Display(Name = "Connections ID")]
+        public int ConnectionsId { get; set; }
 
         [Display(Name = "Character ID")]
         public int CharacterId { get; set; }
@@ -20,9 +20,10 @@ namespace SuperFriendsDB.Data
         public virtual Character Characters { get; set; }
 
         [Required]
-        public string Occupation { get; set; }
+        [Display(Name = "Group Affiliation")]
+        public string GroupAffiliation { get; set; }
 
         [Required]
-        public string Base { get; set; }
+        public string Relatives { get; set; }
     }
 }
