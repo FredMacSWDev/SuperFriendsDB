@@ -74,6 +74,7 @@
     <Compile Include="CharacterModels\CharacterListItem.cs" />
     <Compile Include="ConnectionModels\ConnectionCreate.cs" />
     <Compile Include="ConnectionModels\ConnectionDetail.cs" />
+    <Compile Include="ConnectionModels\ConnectionEdit.cs" />
     <Compile Include="ConnectionModels\ConnectionListItem.cs" />
     <Compile Include="PowerstatModels\PowerstatCreate.cs" />
     <Compile Include="PowerstatModels\PowerstatDetail.cs" />

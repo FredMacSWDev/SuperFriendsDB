@@ -60,5 +60,20 @@ namespace SuperFriendsDB.WebMVC.Controllers
 
             return View(model);
         }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateConnectionService();
+            var detail = service.GetConnectionsById(id);
+            var model =
+                new ConnectionEdit
+                {
+                    ConnectionsId = detail.ConnectionsId,
+                    CharacterId = detail.CharacterId,
+                    GroupAffiliation = detail.GroupAffiliation,
+                    Relatives = detail.Relatives
+                };
+            return View(model);
+        }
     }
 }

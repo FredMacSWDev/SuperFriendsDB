@@ -74,5 +74,21 @@ namespace SuperFriendsDB.Services
                     };
             }
         }
+
+        public bool UpdateConnections(ConnectionEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Connections
+                        .Single(e => e.ConnectionsId == model.ConnectionsId);
+
+                entity.GroupAffiliation = model.GroupAffiliation;
+                entity.Relatives = model.Relatives;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
