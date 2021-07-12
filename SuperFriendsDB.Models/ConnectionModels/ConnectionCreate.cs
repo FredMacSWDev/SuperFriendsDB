@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace SuperFriendsDB.Models.ConnectionModels
 {
-    public class ConnectionListItem
+    public class ConnectionCreate
     {
         [Key]
         [Display(Name = "Connections ID")]
@@ -15,7 +15,7 @@ namespace SuperFriendsDB.Models.ConnectionModels
 
         [Display(Name = "Character ID")]
         public int CharacterId { get; set; }
-        
+
         [Required]
         [Display(Name = "Group Affiliation")]
         public string GroupAffiliation { get; set; }

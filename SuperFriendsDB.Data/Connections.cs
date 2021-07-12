@@ -20,6 +20,7 @@ namespace SuperFriendsDB.Data
         public virtual Character Characters { get; set; }
 
         [Required]
+        [Display(Name = "Group Affiliation")]
         public string GroupAffiliation { get; set; }
 
         [Required]
