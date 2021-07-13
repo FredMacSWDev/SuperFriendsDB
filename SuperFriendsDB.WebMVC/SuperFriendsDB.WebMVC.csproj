@@ -178,6 +178,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PowerstatController.cs" />
+    <Compile Include="Controllers\SuperFriendsController.cs" />
     <Compile Include="Controllers\WorkController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -273,6 +274,7 @@
     <Content Include="Views\Connection\Details.cshtml" />
     <Content Include="Views\Connection\Edit.cshtml" />
     <Content Include="Views\Connection\Delete.cshtml" />
+    <Content Include="Views\SuperFriends\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
