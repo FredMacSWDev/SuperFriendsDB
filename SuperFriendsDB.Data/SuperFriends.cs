@@ -26,5 +26,8 @@ namespace SuperFriendsDB.Data
         public int WorkId { get; set; }
         public virtual Work Work { get; set; }
 
+        public int ConnectionsId { get; set; }
+        public virtual Connections Connection { get; set; }
+
     }
 }

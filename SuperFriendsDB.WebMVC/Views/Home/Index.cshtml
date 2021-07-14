@@ -2,30 +2,29 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <div class="jumbotron">
+        <h1>The SuperFriends</h1>
+        <p class="lead">The SuperFriends is collection of cartoon series that began in the 1970s by Hanna-Barbera, based on DC Comics' Justice League of America.  The various versions of the cartoon series ran from 1973 through 1985.  From the series, a comic book series was derived by E. Nelson Bridwell, which ran from 1976 to 1981.</p>
+        <p><a href="https://superfriends.fandom.com/wiki/Super_Friends_Wiki" class="btn btn-primary btn-lg" target="_blank">Learn more &raquo;</a></p>
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h2>Meet the SuperFriends</h2>
+            <p>
+                An index of all the superheroes that make up the group known as "The SuperFriends."
+            </p>
+            <p>@Html.ActionLink("View Characters »", "Index", "SuperFriends", null, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>Get to know your heroes</h2>
+            <p>View the biography of your favorite character(s) to find out more in-depth information about the hero's background information.</p>
+            <p>@Html.ActionLink("View Bios »", "Index", "Biography", null, new { @class = "btn btn-primary" })</p>
+        </div>
+        <div class="col-md-4">
+            <h2>See them in ACTION!</h2>
+            <p>You can watch a sample of this cartoon series below...</p>
+            <p><a class="btn btn-primary" href="https://youtube.com/playlist?list=PLSl9_LkNTzSHtGg1d22qRvb8yLH9O9FhC" target="_blank">Watch on YouTube &raquo;</a></p>
+        </div>
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>

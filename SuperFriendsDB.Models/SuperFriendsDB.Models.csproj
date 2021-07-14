@@ -81,6 +81,9 @@
     <Compile Include="PowerstatModels\PowerstatEdit.cs" />
     <Compile Include="PowerstatModels\PowerstatListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SuperFriendsModels\SuperFriendsCreate.cs" />
+    <Compile Include="SuperFriendsModels\SuperFriendsDetail.cs" />
+    <Compile Include="SuperFriendsModels\SuperFriendsListItem.cs" />
     <Compile Include="WorkModels\WorkCreate.cs" />
     <Compile Include="WorkModels\WorkDetail.cs" />
     <Compile Include="WorkModels\WorkEdit.cs" />
