@@ -1,0 +1,66 @@
+﻿@model SuperFriendsDB.Models.SuperFriendsModels.SuperFriendsDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SuperFriends Detail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CharacterId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CharacterId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StatsId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StatsId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BioId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BioId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AppearanceId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AppearanceId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ConnectionsId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ConnectionsId)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

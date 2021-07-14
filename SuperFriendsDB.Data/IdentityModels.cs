@@ -39,7 +39,7 @@ namespace SuperFriendsDB.Data
         public DbSet<Appearance> AppearanceItems { get; set; }
         public DbSet<Work> WorkDetails { get; set; }
         public DbSet<Connections> Connections { get; set; }
-
+        public DbSet<SuperFriends> SuperFriends { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
@@ -47,6 +47,10 @@ namespace SuperFriendsDB.Data
             modelBuilder
                 .Conventions
                 .Remove<PluralizingTableNameConvention>();
+
+            modelBuilder
+                .Conventions
+                .Remove<OneToManyCascadeDeleteConvention>();
 
             modelBuilder
                 .Configurations

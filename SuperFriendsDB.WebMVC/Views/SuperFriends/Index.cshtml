@@ -1,0 +1,323 @@
+﻿@model IEnumerable<SuperFriendsDB.Models.SuperFriendsModels.SuperFriendsListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Character Profile</h2>
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title></title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-theme.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.3.1.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="tab-content">
+        <h5 class="text-uppercase p-2 text-center">Character</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Character.CharacterId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Character.HeroName)
+                    </th>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.Character.CharacterId)
+                        </td>
+                        <td>
+                            @item.Character.HeroName)
+                        </td>
+
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-content">
+        <h5 class="text-uppercase p-2 text-center">Powerstats</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Powerstat.StatsId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Powerstat.CharacterId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Powerstat.Intelligence)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Powerstat.Strength)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Powerstat.Speed)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Powerstat.Durability)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Powerstat.Power)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Powerstat.Combat)
+                    </th>
+</thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.Powerstat.StatsId)
+                    </td>
+                    <td>
+                        @item.Powerstat.CharacterId)
+                    </td>
+                    <td>
+                        @item.Powerstat.Intelligence)
+                    </td>
+                    <td>
+                        @item.Powerstat.Strength)
+                    </td>
+                    <td>
+                        @item.Powerstat.Speed)
+                    </td>
+                    <td>
+                        @item.Powerstat.Durability)
+                    </td>
+                    <td>
+                        @item.Powerstat.Power)
+                    </td>
+                    <td>
+                        @item.Powerstat.Combat)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-content">
+        <h5 class="text-uppercase p-2 text-center">Biography</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Biography.BioId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Biography.CharacterId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Biography.FullName);
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Biography.AlterEgos)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Biography.PlaceOfBirth)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Biography.FirstAppearance)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Biography.Publisher)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Biography.Alignment)
+                    </th>
+</thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.Biography.BioId)
+                    </td>
+                    <td>
+                        @item.Biography.CharacterId)
+                    </td>
+                    <td>
+                        @item.Biography.FullName)
+                    </td>
+                    <td>
+                        @item.Biography.AlterEgos)
+                    </td>
+                    <td>
+                        @item.Biography.PlaceOfBirth)
+                    </td>
+                    <td>
+                        @item.Biography.FirstAppearance)
+                    </td>
+                    <td>
+                        @item.Biography.Publisher)
+                    </td>
+                    <td>
+                        @item.Biography.Alignment)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-content">
+        <h5 class="text-uppercase p-2 text-center">Appearance</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance.AppearanceId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance.CharacterId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance.Gender)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance.Race)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance.Height)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance.Weight)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance.EyeColor)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Appearance.HairColor)
+                    </th>
+</thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.Appearance.AppearanceId)
+                    </td>
+                    <td>
+                        @item.Appearance.CharacterId)
+                    </td>
+                    <td>
+                        @item.Appearance.Gender)
+                    </td>
+                    <td>
+                        @item.Appearance.Race)
+                    </td>
+                    <td>
+                        @item.Appearance.Height)
+                    </td>
+                    <td>
+                        @item.Appearance.Weight)
+                    </td>
+                    <td>
+                        @item.Appearance.EyeColor)
+                    </td>
+                    <td>
+                        @item.Appearance.HairColor)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-content">
+        <h5 class="text-uppercase p-2 text-center">Work</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Work.WorkId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Work.CharacterId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Work.Occupation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Work.Base)
+                    </th>
+</thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.Work.WorkId)
+                    </td>
+                    <td>
+                        @item.Work.CharacterId)
+                    </td>
+                    <td>
+                        @item.Work.Occupation)
+                    </td>
+                    <td>
+                        @item.Work.Base)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="tab-content">
+        <h5 class="text-uppercase p-2 text-center">Connections</h5>
+        <table class="table table-bordered table-striped">
+            <thead class="thead-dark text-white">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Connection.ConnectionsId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Connection.CharacterId)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Connection.GroupAffiliation)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Connection.Relatives)
+                    </th>
+</thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <td>
+                        @item.Connection.ConnectionsId)
+                    </td>
+                    <td>
+                        @item.Connection.CharacterId)
+                    </td>
+                    <td>
+                        @item.Connection.GroupAffiliation)
+                    </td>
+                    <td>
+                        @item.Connection.Relatives)
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+

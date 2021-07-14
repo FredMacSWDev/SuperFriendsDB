@@ -11,6 +11,7 @@ namespace SuperFriendsDB.Data
     public class Character
     {
         [Key]
+        [Display(Name ="Character ID")]
         public int CharacterId { get; set; }
 
         //[Required]
@@ -19,6 +20,7 @@ namespace SuperFriendsDB.Data
         [Required]
         [Display(Name = "Character")]
         public string HeroName { get; set; }
-                
+        public virtual List<SuperFriends> SuperFriends { get; set; }
+
     }
 }
