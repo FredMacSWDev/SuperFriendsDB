@@ -6,56 +6,5 @@
 
 <h2>Index of SuperFriends</h2>
 
-<p>
-    @Html.ActionLink("See Full Stats", "Detail")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.CharacterId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.StatsId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.BioId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.AppearanceId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ConnectionsId)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.CharacterId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.StatsId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BioId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.AppearanceId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ConnectionsId)
-        </td>
-        <td>
-            @*@Html.ActionLink("Details", "Details", new { id=item.Id })*@
-        </td>
-    </tr>
-}
 
-</table>
