@@ -32,9 +32,11 @@ namespace SuperFriendsDB.Data
         public string Weight { get; set; }
 
         [Required]
+        [Display(Name ="Eye Color")]
         public string EyeColor { get; set; }
 
         [Required]
+        [Display(Name ="Hair Color")]
         public string HairColor { get; set; }
     }
 }

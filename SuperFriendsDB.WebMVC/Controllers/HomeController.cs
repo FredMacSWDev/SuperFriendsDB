@@ -15,7 +15,7 @@ namespace SuperFriendsDB.WebMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "More Info...";
 
             return View();
         }

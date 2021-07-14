@@ -18,6 +18,7 @@ namespace SuperFriendsDB.Models.PowerstatModels
 
         [Display(Name ="Character ID")]
         public int CharacterId { get; set; }
+        public virtual Character Character { get; set; }
        
         [Required]
         public string Intelligence { get; set; }
@@ -36,5 +37,6 @@ namespace SuperFriendsDB.Models.PowerstatModels
 
         [Required]
         public string Combat { get; set; }
+
     }
 }

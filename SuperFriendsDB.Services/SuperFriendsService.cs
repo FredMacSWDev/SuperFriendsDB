@@ -16,6 +16,28 @@ namespace SuperFriendsDB.Services
             _userId = userId;
         }
 
+        public bool CreateProfile(SuperFriendsCreate model)
+        {
+            var entity =
+                new SuperFriends()
+                {
+                    Id = model.Id,
+                    CharacterId = model.CharacterId,
+                    StatsId = model.StatsId,
+                    BioId = model.BioId,
+                    AppearanceId = model.AppearanceId,
+                    WorkId = model.WorkId,
+                    ConnectionsId = model.ConnectionsId
+                };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.SuperFriends.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+        }
+        
+
         public IEnumerable<SuperFriendsListItem> GetSuperfriends()
         {
             using (var ctx = new ApplicationDbContext())
@@ -30,62 +52,84 @@ namespace SuperFriendsDB.Services
                                 new SuperFriendsListItem
                                 {
                                     Id = e.Id,
-                                    CharacterId = e.CharacterId,
-                                    Character = new Models.CharacterModels.CharacterListItem
-                                    {
-                                        HeroName = e.Character.HeroName,
-                                        CharacterId = e.Character.CharacterId
-                                    },
-                                    StatsId = e.StatsId,
-                                    Powerstat = new Models.PowerstatModels.PowerstatListItem
-                                    {
-                                        Intelligence = e.Powerstat.Intelligence,
-                                        Strength = e.Powerstat.Strength,
-                                        Speed = e.Powerstat.Speed,
-                                        Durability = e.Powerstat.Durability,
-                                        Power = e.Powerstat.Power,
-                                        Combat = e.Powerstat.Combat,
-                                        StatsId = e.Powerstat.StatsId
-                                    },
-                                    BioId = e.BioId,
-                                    Biography = new Models.BiographyModels.BiographyListItem
-                                    {
-                                        FullName = e.Biography.FullName,
-                                        AlterEgos = e.Biography.AlterEgos,
-                                        PlaceOfBirth = e.Biography.PlaceOfBirth,
-                                        FirstAppearance = e.Biography.FirstAppearance,
-                                        Publisher = e.Biography.Publisher,
-                                        Alignment = e.Biography.Alignment,
-                                        BioId = e.Biography.BioId
-                                    },
-                                    AppearanceId = e.AppearanceId,
-                                    Appearance = new Models.AppearanceModels.AppearanceListItem
-                                    {
-                                        Gender = e.Appearance.Gender,
-                                        Race = e.Appearance.Race,
-                                        Height = e.Appearance.Height,
-                                        Weight = e.Appearance.Weight,
-                                        EyeColor = e.Appearance.EyeColor,
-                                        HairColor = e.Appearance.HairColor,
-                                        AppearanceId = e.Appearance.AppearanceId
-                                    },
-                                    WorkId = e.WorkId,
-                                    Work = new Models.WorkModels.WorkListItem
-                                    {
-                                        Occupation = e.Work.Occupation,
-                                        Base = e.Work.Base,
-                                        WorkId = e.Work.WorkId
-                                    },
-                                    ConnectionsId = e.ConnectionsId,
-                                    Connection = new Models.ConnectionModels.ConnectionListItem
-                                    {
-                                        GroupAffiliation = e.Connection.GroupAffiliation,
-                                        Relatives = e.Connection.Relatives,
-                                        ConnectionsId = e.Connection.ConnectionsId
-                                    }
+                                    CharacterId = ctx.Characters.Count(),
+                                    Character = ctx.Characters
+                                    .Single(m => m.CharacterId == e.CharacterId),
+
+                                    StatsId = ctx.Powerstats.Count(),
+                                    Powerstat = ctx.Powerstats
+                                    .Single(m => m.StatsId == e.StatsId),
+
+                                    BioId = ctx.Bio.Count(),
+                                    Biography = ctx.Bio
+                                    .Single(m => m.BioId == e.BioId),
+
+                                    AppearanceId = ctx.AppearanceItems.Count(),
+                                    Appearance = ctx.AppearanceItems
+                                    .Single(m => m.AppearanceId == e.AppearanceId),
+
+                                    WorkId = ctx.WorkDetails.Count(),
+                                    Work = ctx.WorkDetails
+                                    .Single(m => m.WorkId == e.WorkId),
+
+                                    ConnectionsId = ctx.Connections.Count(),
+                                    Connection = ctx.Connections
+                                    .Single(m => m.ConnectionsId == e.ConnectionsId)
+
+                                    //{
+                                    //    HeroName = e.Character.HeroName,
+                                    //    CharacterId = e.Character.CharacterId
+                                    //},
+                                    //StatsId = e.StatsId,
+                                    //Powerstat = new Models.PowerstatModels.PowerstatListItem
+                                    //{
+                                    //    Intelligence = e.Powerstat.Intelligence,
+                                    //    Strength = e.Powerstat.Strength,
+                                    //    Speed = e.Powerstat.Speed,
+                                    //    Durability = e.Powerstat.Durability,
+                                    //    Power = e.Powerstat.Power,
+                                    //    Combat = e.Powerstat.Combat,
+                                    //    StatsId = e.Powerstat.StatsId
+                                    //},
+                                    //BioId = e.BioId,
+                                    //Biography = new Models.BiographyModels.BiographyListItem
+                                    //{
+                                    //    FullName = e.Biography.FullName,
+                                    //    AlterEgos = e.Biography.AlterEgos,
+                                    //    PlaceOfBirth = e.Biography.PlaceOfBirth,
+                                    //    FirstAppearance = e.Biography.FirstAppearance,
+                                    //    Publisher = e.Biography.Publisher,
+                                    //    Alignment = e.Biography.Alignment,
+                                    //    BioId = e.Biography.BioId
+                                    //},
+                                    //AppearanceId = e.AppearanceId,
+                                    //Appearance = new Models.AppearanceModels.AppearanceListItem
+                                    //{
+                                    //    Gender = e.Appearance.Gender,
+                                    //    Race = e.Appearance.Race,
+                                    //    Height = e.Appearance.Height,
+                                    //    Weight = e.Appearance.Weight,
+                                    //    EyeColor = e.Appearance.EyeColor,
+                                    //    HairColor = e.Appearance.HairColor,
+                                    //    AppearanceId = e.Appearance.AppearanceId
+                                    //},
+                                    //WorkId = e.WorkId,
+                                    //Work = new Models.WorkModels.WorkListItem
+                                    //{
+                                    //    Occupation = e.Work.Occupation,
+                                    //    Base = e.Work.Base,
+                                    //    WorkId = e.Work.WorkId
+                                    //},
+                                    //ConnectionsId = e.ConnectionsId,
+                                    //Connection = new Models.ConnectionModels.ConnectionListItem
+                                    //{
+                                    //    GroupAffiliation = e.Connection.GroupAffiliation,
+                                    //    Relatives = e.Connection.Relatives,
+                                    //    ConnectionsId = e.Connection.ConnectionsId
+                                    //}
 
 
-                                    
+
                                 }).ToArray();
             }
         }

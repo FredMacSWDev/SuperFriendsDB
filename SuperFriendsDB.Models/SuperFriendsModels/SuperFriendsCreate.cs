@@ -1,10 +1,4 @@
 ﻿using SuperFriendsDB.Data;
-using SuperFriendsDB.Models.AppearanceModels;
-using SuperFriendsDB.Models.BiographyModels;
-using SuperFriendsDB.Models.CharacterModels;
-using SuperFriendsDB.Models.ConnectionModels;
-using SuperFriendsDB.Models.PowerstatModels;
-using SuperFriendsDB.Models.WorkModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -14,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SuperFriendsDB.Models.SuperFriendsModels
 {
-    public class SuperFriendsListItem
+    public class SuperFriendsCreate
     {
         public int Id { get; set; }
 
@@ -26,7 +20,7 @@ namespace SuperFriendsDB.Models.SuperFriendsModels
         public int StatsId { get; set; }
         public Powerstat Powerstat { get; set; }
 
-        [Display(Name = "Bio ID")]
+        [Display(Name ="Bio ID")]
         public int BioId { get; set; }
         public Biography Biography { get; set; }
 

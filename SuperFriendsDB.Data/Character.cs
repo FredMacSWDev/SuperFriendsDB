@@ -11,6 +11,7 @@ namespace SuperFriendsDB.Data
     public class Character
     {
         [Key]
+        [Display(Name ="Character ID")]
         public int CharacterId { get; set; }
 
         //[Required]
