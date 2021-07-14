@@ -1,4 +1,4 @@
-# SuperFriendsDB
+# **_SuperFriendsDB_**
 A database of details regarding the DC Comics superheroes from the legendary cartoon series, The SuperFriends.
 
 ## About
